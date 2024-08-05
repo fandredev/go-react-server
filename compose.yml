@@ -1,0 +1,18 @@
+
+services:
+  db:
+    image: postgres:latest # Imagem do postgres mais recente
+    restart: unless-stopped # Reiniciar o container a menos que seja parado
+    ports:
+      - ${DATABASE_PORT_WEBSOCKET}:5432 # Porta do postgres padrão
+    environment:
+      POSTGRES_USER: ${DATABASE_USER} # Usuário do postgres
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD} # Senha do postgres
+      POSTGRES_DB: ${DATABASE_NAME} # Nome do banco de dados
+
+    volumes:
+      - db:/var/lib/postgresql/data # Volume para armazenar os dados do postgres
+
+volumes:
+  db:
+    driver: local # Armazenamento local
