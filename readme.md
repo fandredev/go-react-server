@@ -27,3 +27,10 @@ click in connection and view the .env.example to be able fill the fields below.:
 ![image](https://github.com/user-attachments/assets/ab421b83-0f4f-4e07-89a4-84c1eaca46dd)
 
 save the connection and enjoy! 😃
+
+
+# Generate queries
+
+``` 
+go generate ./...
+``` 
