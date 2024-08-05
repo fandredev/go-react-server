@@ -13,6 +13,21 @@ services:
     volumes:
       - db:/var/lib/postgresql/data # Volume para armazenar os dados do postgres
 
+  pgadmin:
+    image: dpage/pgadmin4:latest 
+    restart: unless-stopped 
+    depends_on: # Dependência do pgadmin com o postgres
+      - db
+    ports:
+      - ${PGADMIN_PORT}:80 # Porta do pgadmin padrão
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL} # Email do pgadmin
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD} # Senha do pgadmin
+    volumes:
+      - pgadmin:/var/lib/pgadmin # Volume para armazenar os dados do pgadmin
+
 volumes:
   db:
+    driver: local # Armazenamento local
+  pgadmin:
     driver: local # Armazenamento local
