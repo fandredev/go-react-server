@@ -1,8 +1,23 @@
+## Stack used
+
+<img src="https://skillicons.dev/icons?i=go,postgres,docker&theme=dark" />
+
+<br>
+
+## Authors
+- [@fandredev](https://www.linkedin.com/in/devfandre/)
+- [Rocketseat](https://www.rocketseat.com.br/)
+
+
 # Run Postgres/pgadmin with Docker
 Note: please, check the .env.example file to change variables
 ``` 
 docker-compose up
 ```
+Note: Run command below to run your containers in detach mode (free terminal to type) 
+
+```docker compose up -d ``` 
+
 
 # Screenshots:
 
