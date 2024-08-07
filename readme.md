@@ -34,3 +34,10 @@ save the connection and enjoy! 😃
 ``` 
 go generate ./...
 ``` 
+
+
+# Run server
+
+``` 
+go run cmd/wsrs/main.go
+```
