@@ -1,0 +1,300 @@
+{
+	"info": {
+		"_postman_id": "10b92cbf-bbd5-45ee-a7b3-13ed63af29ec",
+		"name": "Go + React",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7059246",
+		"_collection_link": "https://bold-spaceship-399240.postman.co/workspace/My-Workspace~eda438f2-214b-4ecf-8d84-b02b922c88b1/collection/7059246-10b92cbf-bbd5-45ee-a7b3-13ed63af29ec?action=share&source=collection_link&creator=7059246"
+	},
+	"item": [
+		{
+			"name": "Messages",
+			"item": [
+				{
+					"name": "Create a new message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": \"this is a test message\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/rooms/:room_id/messages",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"rooms",
+								":room_id",
+								"messages"
+							],
+							"variable": [
+								{
+									"key": "room_id",
+									"value": "a7df8719-5e0a-4521-bc82-93ca2668cf58"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a specific message",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/rooms/:room_id/messages/:message_id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"rooms",
+								":room_id",
+								"messages",
+								":message_id"
+							],
+							"variable": [
+								{
+									"key": "room_id",
+									"value": "29ca3de2-f116-4299-9345-7c07510db9bb"
+								},
+								{
+									"key": "message_id",
+									"value": "28e23a25-c58e-4737-b6f7-f01da5896d5a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add 1 reaction",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/rooms/:room_id/messages/:message_id/react",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"rooms",
+								":room_id",
+								"messages",
+								":message_id",
+								"react"
+							],
+							"variable": [
+								{
+									"key": "room_id",
+									"value": "29ca3de2-f116-4299-9345-7c07510db9bb"
+								},
+								{
+									"key": "message_id",
+									"value": "28e23a25-c58e-4737-b6f7-f01da5896d5a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove 1 reaction",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/rooms/:room_id/messages/:message_id/react",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"rooms",
+								":room_id",
+								"messages",
+								":message_id",
+								"react"
+							],
+							"variable": [
+								{
+									"key": "room_id",
+									"value": "29ca3de2-f116-4299-9345-7c07510db9bb"
+								},
+								{
+									"key": "message_id",
+									"value": "28e23a25-c58e-4737-b6f7-f01da5896d5a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark as answered",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/rooms/:room_id/messages/:message_id/answer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"rooms",
+								":room_id",
+								"messages",
+								":message_id",
+								"answer"
+							],
+							"variable": [
+								{
+									"key": "room_id",
+									"value": "29ca3de2-f116-4299-9345-7c07510db9bb"
+								},
+								{
+									"key": "message_id",
+									"value": "28e23a25-c58e-4737-b6f7-f01da5896d5a"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Create room",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"theme\": \"this is a test room\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/rooms",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"rooms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all rooms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/rooms",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"rooms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a room",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/rooms/:room_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"rooms",
+						":room_id"
+					],
+					"variable": [
+						{
+							"key": "room_id",
+							"value": "29ca3de2-f116-4299-9345-7c07510db9bb"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all room messages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/rooms/:room_id/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"rooms",
+						":room_id",
+						"messages"
+					],
+					"variable": [
+						{
+							"key": "room_id",
+							"value": "29ca3de2-f116-4299-9345-7c07510db9bb"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
